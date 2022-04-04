@@ -28,4 +28,3 @@ end
 
 person = Person.new(13)
 puts person.can_use_services?
-puts person.name
