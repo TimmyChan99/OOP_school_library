@@ -33,6 +33,6 @@ class Person
 
 end
 
-person = Person.new(13, true)
-puts person.can_use_services?
+# person = Person.new(13, true)
+# puts person.can_use_services?
 #puts person.name
