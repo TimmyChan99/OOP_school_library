@@ -1,4 +1,5 @@
 require_relative 'decorator'
+require_relative 'rental'
 
 class Person < Nameable
   attr_reader :id
@@ -10,6 +11,7 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   private
@@ -30,6 +32,10 @@ class Person < Nameable
 
   def correct_name
     @name
+  end
+
+  def add_rental(book, date)
+    Rental.new(book, date, self)
   end
 end
 
