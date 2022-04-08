@@ -33,13 +33,13 @@ class App
   end
 
   def list_rentals_for_id
-    print 'Please enter the person id:'
+    print 'ID of person: '
     id = gets.chomp.to_i
 
     @rentals.each do |rental|
       if rental.person.id == id
-        puts 'List of rentals'
-        puts "Rented Book: Title: #{rental.book.title}, Author: #{rental.book.author}, Date of rent: #{rental.book.date}"
+        puts 'Rentals:'
+        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
       else
         puts 'This person has no rentals'
       end
@@ -47,60 +47,59 @@ class App
   end
 
   def create_student
-    puts 'Please enter the student name'
-    name = gets.chomp
-    puts 'Please enter the student age'
+    print 'Age: '
     age = gets.chomp.to_i
-    puts 'Please enter the student classroom'
-    classroom = gets.chomp
-    puts 'Does the studend have the parent permission'
-    puts 'Type (yes) if they have it'
-    puts "Type (no) if they don't have it"
+
+    print 'Name: '
+    name = gets.chomp
+
+    print 'Has parent permission? [Y/N]: '
     permission = gets.chomp.downcase
 
+    print 'Classroom: '
+    classroom = gets.chomp
+
     case permission
-    when 'yes'
+    when 'y'
       parent_permission = true
       @people << Student.new(age, name, classroom, parent_permission)
-    when  'no'
+    when 'n'
       parent_permission = false
       @people << Student.new(age, name, classroom, parent_permission)
     else
       puts 'Unvalid option here'
     end
-
-    
   end
 
   def create_teacher
-    puts 'Please enter the teacher name'
-    name = gets.chomp
-    puts 'Please enter the teacher age'
+    print 'Age: '
     age = gets.chomp.to_i
-    puts 'Please enter the teacher specialization'
+    print 'Name: '
+    name = gets.chomp
+    print 'Specialization: '
     specialization = gets.chomp
 
-    @people << Teacher.new(age, specialization, name: name)
+    @people << Teacher.new(age, specialization, name)
   end
 
   def create_person
-    puts 'If the person is a student type (s) else if the person is a teacher type (t)'
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     role = gets.chomp.downcase
-    
-   if role == 's'
-    create_student
-   elsif role == 't'
-    create_teacher
-   else
-    puts 'Unvalid option'
-   end
-  
+
+    case role
+    when '1'
+      create_student
+    when '2'
+      create_teacher
+    else
+      puts 'Unvalid option'
+    end
   end
 
   def create_book
-    puts 'Please enter the book title'
+    print 'Title: '
     title = gets.chomp
-    puts 'Please enter the book author'
+    print 'Author: '
     author = gets.chomp
 
     @books << Book.new(title, author)
@@ -118,7 +117,7 @@ class App
     id = gets.chomp.to_i
 
     print 'Date: '
-    date = gets.chomp
+    date = gets.chomp.to_s
 
     @rentals << Rental.new(@books[book_id], date, @people[id])
   end
