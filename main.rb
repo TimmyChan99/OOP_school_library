@@ -23,7 +23,7 @@ def options_list(app, menu_option)
   when '4'
     app.create_book
   when '5'
-    app.create_book
+    app.create_rental
   when '6'
     app.list_rentals_for_id
   else
