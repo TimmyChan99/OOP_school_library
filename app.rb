@@ -5,21 +5,115 @@ require_relative 'classroom'
 require_relative 'book'
 require_relative 'rental'
 
-class App 
+class App
+  def initialize
+    @books = []
+    @pepole = []
+    @rentals = []
+  end
 
-	def initialize
-		@books = []
-		@pepole = []
-		@rentals = []
-	end
-  
- def list_all_books
-	if @book.length > 0
-		
-		puts "List of all books"
-		@books.each { |book| puts "Title: #{book.title}, Author: #{book.author}"}
-	else
-		puts "The book list is empty"
-	end
- end
+  def list_all_books
+    if @book.empty?
+
+      puts 'The book list is empty'
+    else
+      puts 'List of all books'
+      @books.each_with_index { |book, index| puts "Title: #{book.title}, Author: #{book.author}, ID: #{index}" }
+    end
+  end
+
+  def list_all_people
+    if @people.empty?
+      puts 'The list is empty'
+    else
+
+      puts 'List of all books'
+      @people.each { |person| puts "Name: #{person.name}, Age: #{person.age}, Id: #{person.id}" }
+    end
+  end
+
+  def list_rentals_for_id
+    print 'Please enter the person id:'
+    id = gets.chomp.to_i
+
+    puts 'List of rentals'
+
+    @rentals.each do |rental|
+      if rental.person.id == id
+        puts "Rented Book: Title: #{rental.book.title}, Author: #{rental.book.author},
+				Date of rent: #{rental.book.date}"
+      else
+        puts 'This person has no rentals'
+      end
+    end
+  end
+
+  def create_student
+    puts 'Please enter the student name'
+    name = gets.chomp
+    puts 'Please enter the student age'
+    age = gets.chomp.to_i
+    puts 'Please enter the student classroom'
+    classroom = gets.chomp
+    puts 'Does the studend have the parent permission'
+    puts 'Type (yes) if they have it'
+    puts "Type (no) if they don't have it"
+    permission = gets.chomp.downcase!
+
+    case permission
+    when 'yes'
+      parent_permission = true
+    when 'no'
+      parent_permission = false
+    else
+      puts 'Unvalid option'
+    end
+
+    @pepole << Student.new(age, classroom, parent_permission, name)
+  end
+
+  def create_teacher
+    puts 'Please enter the teacher name'
+    name = gets.chomp
+    puts 'Please enter the teacher age'
+    age = gets.chomp.to_i
+    puts 'Please enter the teacher specialization'
+    specialization = gets.chomp
+
+    @pepole << Teacher.new(age, specialization, name: name)
+  end
+
+  def create_person
+    puts 'If the person is a student type (s) else if the person is a teacher type (t)'
+    role = gets.chomp.downcase!
+
+    case role
+    when role == 's'
+      create_student
+    when role == 't'
+      create_teacher
+    else
+      puts 'Unvalid option'
+    end
+  end
+
+  def create_book
+    puts 'Please enter the book title'
+    title = gets.chomp
+    puts 'Please enter the book author'
+    author = gets.chomp
+
+    @books << Book.new(title, author)
+  end
+
+  def create_rental
+    puts 'Please enter the rented book id'
+    book_id = gets.chomp
+    puts 'Please enter the rent date'
+    date = gets.chomp
+    puts 'Please enter id of the person who rented the book'
+    id = gets.chomp.to_i
+
+    @rentals << Rental.new(@books[book_id], date, @person[id])
+  end
 end
