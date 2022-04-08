@@ -20,10 +20,13 @@ def options_list(app, menu_option)
     app.list_all_people
   when '3'
     app.create_person
+    puts "Person created successfully."
   when '4'
     app.create_book
+    puts "Book created successfully."
   when '5'
     app.create_rental
+    puts "Rental created successfully."
   when '6'
     app.list_rentals_for_id
   else
@@ -35,12 +38,14 @@ def main
   app = App.new
 
   puts 'Welcome to the school library'
-  menu
+  
   loop do
+    menu
     menu_option = gets.chomp
     break if menu_option == '7'
 
     options_list(app, menu_option)
+    puts ''
   end
 end
 

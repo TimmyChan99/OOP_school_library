@@ -27,8 +27,8 @@ class App
       puts 'The list is empty'
     else
 
-      puts 'List of all books'
-      @people.each { |person| puts "Name: #{person.name}, Age: #{person.age}, Id: #{person.id}" }
+      puts 'List of all people'
+      @people.each { |person| puts "[#{person.class.name}] Name: #{person.name}, Age: #{person.age}, Id: #{person.id}" }
     end
   end
 
