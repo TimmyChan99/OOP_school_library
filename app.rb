@@ -57,18 +57,20 @@ class App
     puts 'Does the studend have the parent permission'
     puts 'Type (yes) if they have it'
     puts "Type (no) if they don't have it"
-    permission = gets.chomp.downcase!
+    permission = gets.chomp.downcase
 
     case permission
     when 'yes'
       parent_permission = true
-    when 'no'
+      @pepole << Student.new(age, name, classroom, parent_permission)
+    when  'no'
       parent_permission = false
+      @pepole << Student.new(age, name, classroom, parent_permission)
     else
-      puts 'Unvalid option'
+      puts 'Unvalid option here'
     end
 
-    @pepole << Student.new(age, classroom, parent_permission, name)
+    
   end
 
   def create_teacher
