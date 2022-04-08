@@ -39,8 +39,7 @@ class App
     @rentals.each do |rental|
       if rental.person.id == id
         puts 'List of rentals'
-        puts "Rented Book: Title: #{rental.book.title}, Author: #{rental.book.author},
-				Date of rent: #{rental.book.date}"
+        puts "Rented Book: Title: #{rental.book.title}, Author: #{rental.book.author}, Date of rent: #{rental.book.date}"
       else
         puts 'This person has no rentals'
       end
