@@ -8,7 +8,7 @@ require_relative 'rental'
 class App
   def initialize
     @books = []
-    @pepole = []
+    @people = []
     @rentals = []
   end
 
@@ -23,7 +23,7 @@ class App
   end
 
   def list_all_people
-    if @pepole.empty?
+    if @people.empty?
       puts 'The list is empty'
     else
 
@@ -62,10 +62,10 @@ class App
     case permission
     when 'yes'
       parent_permission = true
-      @pepole << Student.new(age, name, classroom, parent_permission)
+      @people << Student.new(age, name, classroom, parent_permission)
     when  'no'
       parent_permission = false
-      @pepole << Student.new(age, name, classroom, parent_permission)
+      @people << Student.new(age, name, classroom, parent_permission)
     else
       puts 'Unvalid option here'
     end
@@ -81,7 +81,7 @@ class App
     puts 'Please enter the teacher specialization'
     specialization = gets.chomp
 
-    @pepole << Teacher.new(age, specialization, name: name)
+    @people << Teacher.new(age, specialization, name: name)
   end
 
   def create_person
@@ -95,17 +95,7 @@ class App
    else
     puts 'Unvalid option'
    end
-      
-    
-    # case role
-    # when role == 's'
-    #   puts role
-    #   create_student
-    # when role == 't'
-    #   create_teacher
-    # else
-    #   puts 'Unvalid option'
-    # end
+  
   end
 
   def create_book
