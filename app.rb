@@ -123,7 +123,7 @@ class App
     puts 'Please enter the rent date'
     date = gets.chomp
     puts 'Please enter id of the person who rented the book'
-    id = gets.chomp.to_i
+    id = gets.chomp
 
     @rentals << Rental.new(@books[book_id], date, @person[id])
   end
