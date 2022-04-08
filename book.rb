@@ -1,4 +1,4 @@
-require_relative './rental'
+require_relative 'rental'
 
 class Book
   attr_reader :rentals
@@ -11,6 +11,6 @@ class Book
   end
 
   def add_rental(person, date)
-    Rental.new(self, person, date)
+    Rental.new(self, date, person)
   end
 end
