@@ -1,16 +1,5 @@
 require_relative 'app'
 
-def start_app
-  puts 'Welcome to the school library'
-  menu
-  loop do
-    menu_option = gets.chomp
-    break if menu_option == '7'
-
-    options_list(menu_option)
-  end
-end
-
 def menu
   [
     'List all books',
@@ -23,20 +12,20 @@ def menu
   ].each_with_index { |option, index| puts "#{index + 1}- #{option}" }
 end
 
-def options_list(menu_option)
+def options_list(app, menu_option)
   case menu_option
   when '1'
-    list_all_books
+    app.list_all_books
   when '2'
-    list_all_people
+    app.list_all_people
   when '3'
-    create_person
+    app.create_person
   when '4'
-    create_book
+    app.create_book
   when '5'
-    create_rental
+    app.create_rental
   when '6'
-    list_rentals_for_id
+    app.list_rentals_for_id
   else
     puts 'Unvalid option'
   end
@@ -44,6 +33,15 @@ end
 
 def main
   app = App.new
-  app.run
-  start_app
+
+  puts 'Welcome to the school library'
+  menu
+  loop do
+    menu_option = gets.chomp
+    break if menu_option == '7'
+
+    options_list(app, menu_option)
+  end
 end
+
+main

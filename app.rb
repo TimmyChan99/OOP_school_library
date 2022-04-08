@@ -13,7 +13,7 @@ class App
   end
 
   def list_all_books
-    if @book.empty?
+    if @books.empty?
 
       puts 'The book list is empty'
     else
@@ -23,7 +23,7 @@ class App
   end
 
   def list_all_people
-    if @people.empty?
+    if @pepole.empty?
       puts 'The list is empty'
     else
 
@@ -36,10 +36,9 @@ class App
     print 'Please enter the person id:'
     id = gets.chomp.to_i
 
-    puts 'List of rentals'
-
     @rentals.each do |rental|
       if rental.person.id == id
+        puts 'List of rentals'
         puts "Rented Book: Title: #{rental.book.title}, Author: #{rental.book.author},
 				Date of rent: #{rental.book.date}"
       else
@@ -85,16 +84,26 @@ class App
 
   def create_person
     puts 'If the person is a student type (s) else if the person is a teacher type (t)'
-    role = gets.chomp.downcase!
-
-    case role
-    when role == 's'
-      create_student
-    when role == 't'
-      create_teacher
-    else
-      puts 'Unvalid option'
-    end
+    role = gets.chomp.downcase
+    
+   if role == 's'
+    create_student
+   elsif role == 't'
+    create_teacher
+   else
+    puts 'Unvalid option'
+   end
+      
+    
+    # case role
+    # when role == 's'
+    #   puts role
+    #   create_student
+    # when role == 't'
+    #   create_teacher
+    # else
+    #   puts 'Unvalid option'
+    # end
   end
 
   def create_book
