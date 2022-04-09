@@ -8,6 +8,9 @@ Imagine that you are the librarian of OOP University, and you need a tool to rec
 - Add new books.
 - Save records of who borrowed a given book and when.
 
+## UML class diagram
+
+![uml_class_diagram](https://user-images.githubusercontent.com/92228303/162537353-70dcf7ff-5257-4c7f-93d3-0ba3163f40c7.png)
 
 ## Built With
 
