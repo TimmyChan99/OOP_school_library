@@ -13,7 +13,7 @@ class App
   end
 
   def input
-     gets.chomp
+    gets.chomp
   end
 
   def list_all_books
