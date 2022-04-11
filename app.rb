@@ -28,7 +28,9 @@ class App
     else
 
       puts 'List of all people'
-      @people.each { |person| puts "[#{person.class.name}] Name: #{person.name}, Age: #{person.age}, Id: #{person.id}" }
+      @people.each do |person|
+        puts "[#{person.class.name}] Name: #{person.name}, Age: #{person.age}, Id: #{person.id}"
+      end
     end
   end
 
@@ -59,15 +61,17 @@ class App
     print 'Classroom: '
     classroom = gets.chomp
 
-    case permission
-    when 'y'
-      parent_permission = true
-      @people << Student.new(age, name, classroom, parent_permission)
-    when 'n'
-      parent_permission = false
+    if %w[y n].include?(permission)
+      case permission
+      when 'y'
+        parent_permission = true
+      when 'n'
+        parent_permission = false
+      end
       @people << Student.new(age, name, classroom, parent_permission)
     else
-      puts 'Unvalid option here'
+      puts 'Please pick a value "Y" or "N"'
+      create_student
     end
   end
 
