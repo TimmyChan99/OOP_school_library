@@ -12,6 +12,10 @@ class App
     @rentals = []
   end
 
+  def input
+     gets.chomp
+  end
+
   def list_all_books
     if @books.empty?
 
@@ -50,16 +54,16 @@ class App
 
   def create_student
     print 'Age: '
-    age = gets.chomp.to_i
+    age = input.to_i
 
     print 'Name: '
-    name = gets.chomp
+    name = input
 
     print 'Has parent permission? [Y/N]: '
-    permission = gets.chomp.downcase
+    permission = input.downcase
 
     print 'Classroom: '
-    classroom = gets.chomp
+    classroom = input
 
     if %w[y n].include?(permission)
       case permission
@@ -77,18 +81,18 @@ class App
 
   def create_teacher
     print 'Age: '
-    age = gets.chomp.to_i
+    age = input.to_i
     print 'Name: '
-    name = gets.chomp
+    name = input
     print 'Specialization: '
-    specialization = gets.chomp
+    specialization = input
 
     @people << Teacher.new(age, specialization, name)
   end
 
   def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-    role = gets.chomp.downcase
+    role = input.downcase
 
     case role
     when '1'
@@ -102,9 +106,9 @@ class App
 
   def create_book
     print 'Title: '
-    title = gets.chomp
+    title = input
     print 'Author: '
-    author = gets.chomp
+    author = input
 
     @books << Book.new(title, author)
   end
@@ -112,16 +116,16 @@ class App
   def create_rental
     puts 'Select a book from the following list by number (not id)'
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
-    book_id = gets.chomp.to_i
+    book_id = input.to_i
 
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
-    id = gets.chomp.to_i
+    id = input.to_i
 
     print 'Date: '
-    date = gets.chomp.to_s
+    date = input.to_s
 
     @rentals << Rental.new(@books[book_id], date, @people[id])
   end
