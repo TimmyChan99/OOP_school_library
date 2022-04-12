@@ -1,0 +1,16 @@
+[
+	{
+		"Json_class":"Rental",
+		"date":"2022-10-01",
+		"person_name": "Student1",
+		"person": {
+			"Json_class":"Student",
+			"age":"10",
+			"id": "456",
+			"name":"Student1",
+			"classroom": "Class-A",
+			"parent_permission": true
+		},
+		"title": "Book1"
+	}
+]

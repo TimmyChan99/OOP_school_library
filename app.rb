@@ -4,11 +4,13 @@ require_relative 'student'
 require_relative 'classroom'
 require_relative 'book'
 require_relative 'rental'
+require_relative 'load'
 
 class App
+  include LoadData
   def initialize
-    @books = []
-    @people = []
+    @books = load_books
+    @people = load_people
     @rentals = []
   end
 
