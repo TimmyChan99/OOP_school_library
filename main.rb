@@ -51,6 +51,7 @@ def main
     puts ''
     app.save_books
     app.save_person
+    app.save_rentals
   end
 end
 
