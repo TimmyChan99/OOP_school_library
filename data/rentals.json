@@ -1,20 +1,8 @@
 [
   {
     "Json_class" : "Rental",
-    "date" : "12-12-12",
-    "person" : 787,
+    "date" : "2020-01-02",
+    "person" : 111,
     "book" : "book2"
-  },
-  {
-    "Json_class" : "Rental",
-    "date" : "14-02-22",
-    "person" : 405,
-    "book" : "book1"
-  },
-  {
-    "Json_class" : "Rental",
-    "date" : "15-03-22",
-    "person" : 228,
-    "book" : "book1"
   }
 ]

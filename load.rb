@@ -31,20 +31,11 @@ module LoadData
     data
   end
 
-  def person_with_id(id)
-    @people.each { |element| return element if element.id.to_i == id.to_i }
-  end
-
-  def book_with_title(title)
-    @books.each_with_index { |element, index| return element if element.title == title }
-  end
-
   def load_rentals
     file = 'data/rentals.json'
     data = []
     if File.exist?(file)
       JSON.parse(File.read(file)).each do |item|
-        
         data.push(Rental.new(item.book, item['date'], item.person))
       end
     end
