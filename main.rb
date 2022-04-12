@@ -49,10 +49,10 @@ def main
 
     options_list(app, menu_option)
     puts ''
-    app.save_books
-    app.save_person
-    app.save_rentals
   end
+  app.save_books
+  app.save_person
+  app.save_rentals
 end
 
 main
