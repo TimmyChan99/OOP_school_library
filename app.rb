@@ -10,7 +10,7 @@ require_relative 'save_data'
 class App
   include LoadData
   include SaveData
-  
+
   def initialize
     @books = load_books
     @people = load_people

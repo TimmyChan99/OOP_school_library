@@ -37,7 +37,6 @@ def options_list(app, menu_option)
   end
 end
 
-
 def main
   app = App.new
 
@@ -51,6 +50,7 @@ def main
     options_list(app, menu_option)
     puts ''
     app.save_books
+    app.save_person
   end
 end
 
