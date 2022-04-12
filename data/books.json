@@ -1,7 +1,1 @@
-[
-	{
-		"Json_class":"Book",
-		"title":"Book1",
-		"author":"author1"
-	}
-]
+[{"title":"Book1","author":"author1"},{"title":"book2","author":"author2"},{"title":"book1","author":"author1"}]

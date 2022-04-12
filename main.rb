@@ -1,4 +1,5 @@
 require_relative 'app'
+require_relative 'save_data'
 
 def menu
   puts 'Please choose an option by entering a number:'
@@ -36,6 +37,7 @@ def options_list(app, menu_option)
   end
 end
 
+
 def main
   app = App.new
 
@@ -48,6 +50,7 @@ def main
 
     options_list(app, menu_option)
     puts ''
+    app.save_books
   end
 end
 

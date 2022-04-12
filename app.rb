@@ -5,9 +5,12 @@ require_relative 'classroom'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'load'
+require_relative 'save_data'
 
 class App
   include LoadData
+  include SaveData
+  
   def initialize
     @books = load_books
     @people = load_people
