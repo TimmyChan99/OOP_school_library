@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Student do
 	before :each do
-		@student = Student.new 20, 'Student name', 'student classroom', false
+		@student = Student.new 20, 'Student name', 'student classroom'
 	end
 
 	it 'Should return student age' do
@@ -17,7 +17,7 @@ describe Student do
 		expect(@student.classroom) .to eq 'student classroom'
 	end
 
-	it "Should return student's permission" do
-		expect(@student.parent_permission) .to be false
-	end
+	# it "Should return student's permission" do
+	# 	expect(@student.parent_permission) .to be false
+	# end
 end
