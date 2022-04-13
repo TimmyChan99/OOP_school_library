@@ -1,0 +1,48 @@
+[
+  {
+    "Json_class" : "Student",
+    "age" : 44,
+    "id" : 195,
+    "name" : "ll",
+    "classroom" : "oo",
+    "parent_permission" : false
+  },
+  {
+    "Json_class" : "Student",
+    "age" : 22,
+    "id" : 250,
+    "name" : "el",
+    "classroom" : "2",
+    "parent_permission" : true
+  },
+  {
+    "Json_class" : "Student",
+    "age" : 12,
+    "id" : 219,
+    "name" : "lily",
+    "classroom" : "12",
+    "parent_permission" : false
+  },
+  {
+    "Json_class" : "Student",
+    "age" : 15,
+    "id" : 311,
+    "name" : "Adam",
+    "classroom" : "11",
+    "parent_permission" : true
+  },
+  {
+    "Json_class" : "Teacher",
+    "age" : 55,
+    "id" : 403,
+    "name" : "anne",
+    "specialization" : "math"
+  },
+  {
+    "Json_class" : "Teacher",
+    "age" : 45,
+    "id" : 878,
+    "name" : "Max",
+    "specialization" : "Frensh"
+  }
+]
