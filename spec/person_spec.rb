@@ -16,6 +16,10 @@ describe Person do
   end
 
   it 'Test can_use_services?: Should return true' do
+    expect(@person.parent_permission).to be true
+  end
+
+  it 'Test can_use_services?: Should return true' do
     expect(@person.can_use_services?).to be true
   end
 
