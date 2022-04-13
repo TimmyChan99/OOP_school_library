@@ -15,7 +15,7 @@ describe Person do
     expect(@person.name).to eq 'Student1'
   end
 
-  it 'Test can_use_services?: Should return true' do
+  it 'Test parent_permission: Should return true' do
     expect(@person.parent_permission).to be true
   end
 
@@ -23,15 +23,15 @@ describe Person do
     expect(@person.can_use_services?).to be true
   end
 
-  it 'Test can_use_services?: Should return true' do
+  it 'Test can_use_services?: Should return false' do
     expect(@person2.can_use_services?).to be false
   end
 
-  it 'Test can_use_services?: Should return true' do
+  it 'Test correct_name: Should return student name' do
     expect(@person.correct_name).to eq 'Student1'
   end
 
-  it 'Test can_use_services?: Should return true' do
+  it 'Test add_rental: Should return rental length' do
     @person.add_rental(@book, '2022-02-02')
     expect(@person.rentals).to have_attributes(size: 1)
   end
