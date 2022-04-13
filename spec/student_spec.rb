@@ -16,8 +16,4 @@ describe Student do
   it 'Should return student classroom' do
     expect(@student.classroom).to eq 'student classroom'
   end
-
-  # it "Should return student's permission" do
-  # 	expect(@student.parent_permission) .to be false
-  # end
 end
