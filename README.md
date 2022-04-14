@@ -25,6 +25,7 @@ To get a local copy up and running follow these simple example steps.
 - Run `git clone https://github.com/TimmyChan99/OOP_school_library.git`
 - Go to the folder `cd OOP_school_library`
 - Run `bundle install` to install dependencies
+- Run `rspec spec` to run all tests
 
 
 ## Author
