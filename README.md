@@ -20,7 +20,7 @@ Imagine that you are the librarian of OOP University, and you need a tool to rec
 
 ### Setup
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps:
 
 - Run `git clone https://github.com/TimmyChan99/OOP_school_library.git`
 - Go to the folder `cd OOP_school_library`
